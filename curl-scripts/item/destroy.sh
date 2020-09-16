@@ -1,5 +1,4 @@
-
-curl "http://localhost:4741/items/${ID}" \
+curl "http://localhost:4741/tasks/${ID}" \
 --include \
 --request DELETE \
 --header "Authorization: Bearer ${TOKEN}" \

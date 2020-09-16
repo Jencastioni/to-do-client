@@ -1,15 +1,13 @@
-
-curl "http://localhost:4741/items/${ID}" \
+curl "http://localhost:4741/tasks/${ID}" \
 --include \
 --request PATCH \
 --header "Authorization: Bearer ${TOKEN}" \
 --header "Content-Type: application/json" \
 --data '{
-  "item": {
+  "task": {
     "category": "'"${CATEGORY}"'",
-    "product": "'"${PRODUCT}"'",
-    "quantity": "'"${QUANTITY}"'",
-    "price": "'"${PRICE}"'"
+    "title": "'"${TITLE}"'",
+    "text": "'"${TEXT}"'"
   }
 }'
 

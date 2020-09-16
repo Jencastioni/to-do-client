@@ -1,19 +1,18 @@
 #!/bin/bash
-
+#TOKEN="890ac712d7a2ebfa57913158b6d360fc" CATEGORY="active" TITLE="complete assignment" TEXT="FINISH PROJECT 4" sh curl-scripts/task/create.sh
 API="http://localhost:4741"
-URL_PATH="/items"
+URL_PATH="/tasks"
 
 curl "${API}${URL_PATH}" \
   --include \
   --request POST \
-  --header "Authorization: Bearer ${TOKEN}" \
   --header "Content-Type: application/json" \
+  --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "item": {
+    "task": {
       "category": "'"${CATEGORY}"'",
-      "product": "'"${PRODUCT}"'",
-      "quantity": "'"${QUANTITY}"'",
-      "price": "'"${PRICE}"'"
+      "title": "'"${TITLE}"'",
+      "text": "'"${TEXT}"'"
     }
   }'
 
