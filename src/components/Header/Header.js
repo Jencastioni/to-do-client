@@ -6,6 +6,8 @@ const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
+    <Nav.Link href="#tasks-create">Manage Your Tasks</Nav.Link>
+    <Nav.Link href="#tasks">See Your Tasks</Nav.Link>
   </Fragment>
 )
 

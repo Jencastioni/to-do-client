@@ -5,5 +5,16 @@ export default {
   signInFailure: 'Failed to sign in. Check your email and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
-  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.'
+  changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
+  createTaskSuccess: 'Created Task Successfully!',
+  createTaskFailure: 'Created Task Failed!',
+  indexTaskSuccess: 'Here Are Your Tasks!',
+  indexTaskFailure: 'No Tasks For You!',
+  deleteTaskSuccess: 'Removed From Your Tasks!',
+  deleteTaskFailure: 'Delete Task Failed!',
+  showTaskSuccess: 'Here Is Your Task!',
+  showTaskFailure: 'Cannot View Your Task At This Time',
+  updateTaskSuccess: 'Updated Task Successfully!',
+  updateTaskFailure: 'Task Failed to Populate!',
+  taskEmpty: 'You Can\'t 👀 What Isn\'t There! Add Some Tasks!'
 }
