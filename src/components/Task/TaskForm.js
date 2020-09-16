@@ -7,14 +7,16 @@ const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
   <div className="updates">
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <h6>Task</h6><br/>
+        <h2>Task</h2><br/>
         {/* <p> </p> */}
         <Form.Label>Category</Form.Label>
         <Form.Control as="select" value={task.category} name='category' onChange={handleChange}>
           <option>Choose a category...</option>
-          <option>Completed</option>
-          <option>High Priority</option>
+          <option>Highest Priority</option>
+          <option>Important</option>
           <option>Low Priority</option>
+          <option>Not Important</option>
+          <option>Completed</option>
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">

@@ -106,8 +106,8 @@ class Task extends Component {
       <div className="task">
         <h6>{task.category}</h6><br/>
         <p> </p>
-        <p>Title: {task.title}</p>
-        <p>Text: {task.text}</p>
+        <p>{task.title}</p>
+        <p>{task.text}</p>
         <p>Date Added: {fullDate}</p>
         <button onClick={this.handleClick}>Edit</button>
         <button onClick={this.destroyTask}>Delete</button><br/>

@@ -33,9 +33,13 @@ class Tasks extends Component {
       }
     })
       .then(res => {
-        console.log(res.data)
         this.setState({ tasks: res.data.tasks })
       })
+      .then(() => msgAlert({
+        heading: 'Success!',
+        message: messages.indexTaskSuccess,
+        variant: 'success'
+      }))
       // .then((res) => {
       //   this.setState({ tasks: res.data.tasks })
       //   console.log(res.data)
@@ -72,9 +76,9 @@ class Tasks extends Component {
       return (
         <li key={task._id}>
           <Link to={`/tasks/${task._id}`}>
-            {task.title}
+            {task.category}
           </Link><br/>
-          <p>Text: {task.text}</p>
+          <p>{task.title}</p>
           <p>Date Added: {fullDate}</p>
         </li>
       )
@@ -83,9 +87,9 @@ class Tasks extends Component {
     return (
       // <Layout>
       <div className="tasks">
-        <h6>Tasks</h6><br/>
-        <p> </p>
-        <p> </p>
+        <h2>Tasks</h2><br/>
+        <p>Tasks are sorted by Highest Priortiy to Not Important and by Date within each category.</p>
+        <p>Completed tasks will be sent to the top so do not forget to delete them!</p>
         <ul>
           {tasks}
         </ul>
