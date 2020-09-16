@@ -109,8 +109,8 @@ class Task extends Component {
         <p>{task.title}</p>
         <p>{task.text}</p>
         <p>Date Added: {fullDate}</p>
-        <button onClick={this.handleClick}>Edit</button>
-        <button onClick={this.destroyTask}>Delete</button><br/>
+        <button type="button" className="btn btn-primary" onClick={this.handleClick}>Edit</button>
+        <button type="button" className="btn btn-dark" onClick={this.destroyTask}>Delete</button><br/>
         {/* <Link to={`/tasks/${this.props.match.params.id}/update`}>
           <button>Update</button>
         </Link> */}

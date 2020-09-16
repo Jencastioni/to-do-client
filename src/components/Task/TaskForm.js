@@ -31,9 +31,9 @@ const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
         <Form.Label>Date Added</Form.Label>
         <Form.Control type="date" placeholder="Date" value={task.date} name='date' onChange={handleChange}/>
       </Form.Group>
-      <button type='submit'>Submit</button>
+      <button type='submit' className="btn btn-primary">Submit</button>
       <Link to={cancelPath}>
-        <button>Cancel</button>
+        <button type="button" className="btn btn-dark">Cancel</button>
       </Link><br/>
       <p>*All Fields Required.</p>
     </Form>
