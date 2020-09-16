@@ -41,12 +41,6 @@ class TaskCreate extends Component {
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
       }
-      // url: `${apiUrl}/items`,
-      // method: 'POST',
-      // headers: {
-      //   'Authorization': `Bearer ${this.props.user.token}`
-      // },
-      // data: { item: this.state.item }
     })
       .then(res => {
         const task = res.data.tasks.find((task) => {
@@ -72,7 +66,6 @@ class TaskCreate extends Component {
           })
         }
       })
-    //   .catch(error)
       .then((res) => {
         if (res.status === 201) {
           this.setState({ createdId: res.data.task._id })
@@ -89,21 +82,6 @@ class TaskCreate extends Component {
           })
         }
       })
-
-    // .then(res => this.setState({ createdId: res.data.item._id }))
-    // .then(() => msgAlert({
-    //   heading: 'Create Item Success',
-    //   message: messages.createItemSuccess,
-    //   variant: 'success'
-    // }))
-    // .catch(console.error)
-    // .catch(error => {
-    //   msgAlert({
-    //     heading: 'Create Item Failure' + error.message,
-    //     message: messages.createItemFailure,
-    //     variant: 'danger'
-    //   })
-    // })
   }
 
   render () {
