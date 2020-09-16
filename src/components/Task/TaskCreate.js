@@ -13,7 +13,8 @@ class TaskCreate extends Component {
       task: {
         category: '',
         title: '',
-        text: ''
+        text: '',
+        date: ''
       },
       createdId: null,
       updated: false
@@ -48,8 +49,8 @@ class TaskCreate extends Component {
       // data: { item: this.state.item }
     })
       .then(res => {
-        const task = res.data.tasks.find((element) => {
-          return element.product === this.state.task.product
+        const task = res.data.tasks.find((task) => {
+          return task.title === this.state.task.title
         })
         if (task) {
           return axios({

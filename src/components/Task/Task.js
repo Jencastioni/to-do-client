@@ -97,12 +97,18 @@ class Task extends Component {
       return <Redirect to={{ pathname: '/tasks-create' }} />
     }
 
+    const date = new Date(task.date)
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate() + 1
+    const fullDate = month + '/' + day + '/' + year
     return (
       <div className="task">
-        <h7>{task.category}</h7><br/>
+        <h6>{task.category}</h6><br/>
         <p> </p>
         <p>Title: {task.title}</p>
         <p>Text: {task.text}</p>
+        <p>Date Added: {fullDate}</p>
         <button onClick={this.handleClick}>Edit</button>
         <button onClick={this.destroyTask}>Delete</button><br/>
         {/* <Link to={`/tasks/${this.props.match.params.id}/update`}>
