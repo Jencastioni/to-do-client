@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Tasks from '../Task/Tasks'
 import Task from '../Task/Task'
 import TaskCreate from '../Task/TaskCreate'
+import About from '../Task/About'
 
 class App extends Component {
   constructor () {
@@ -68,6 +69,9 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/tasks-create' render={({ match }) => (
             <TaskCreate user={user} match={match} msgAlert={this.msgAlert}/>
+          )} />
+          <AuthenticatedRoute user={user} exact path='/about' render={() => (
+            <About msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

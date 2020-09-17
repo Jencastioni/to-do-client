@@ -5,10 +5,11 @@ import Navbar from 'react-bootstrap/Navbar'
 const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="/#/">Home</Nav.Link>
+    <Nav.Link href="/About/">About</Nav.Link>
+    <Nav.Link href="#tasks-create">Manage My Tasks</Nav.Link>
+    <Nav.Link href="#tasks">My Tasks</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#tasks-create">Manage Your Tasks</Nav.Link>
-    <Nav.Link href="#tasks">See Your Tasks</Nav.Link>
   </Fragment>
 )
 
@@ -19,16 +20,10 @@ const unauthenticatedOptions = (
   </Fragment>
 )
 
-// const alwaysOptions = (
-//   <Fragment>
-//     <Nav.Link to="/#/">Home</Nav.Link>
-//   </Fragment>
-// )
-
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar className="Navbar" expand="md">
     <Navbar.Brand href="#">
-      To-Do List
+      <img src="../check.png" height="20"></img>CheckIt
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

@@ -105,7 +105,6 @@ class Task extends Component {
     return (
       <div className="task">
         <h6>{task.category}</h6><br/>
-        <p> </p>
         <p>{task.title}</p>
         <p>{task.text}</p>
         <p>Date Added: {fullDate}</p>
