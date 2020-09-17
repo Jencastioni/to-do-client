@@ -88,7 +88,7 @@ class Tasks extends Component {
       // <Layout>
       <div className="tasks">
         <h2>Tasks</h2><br/>
-        <p>Tasks are sorted by Highest Priortiy to Not Important and by Date within each category.</p>
+        <p>Tasks are sorted by Highest Priority, Important, Low Priority to Not Important and by Date within each category.</p>
         <p>Completed tasks will be sent to the top so do not forget to delete them!</p>
         <ul>
           {tasks}
