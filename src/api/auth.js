@@ -23,7 +23,7 @@ export const signIn = credentials => {
     data: {
       credentials: {
         username: credentials.username,
-        email: credentials.email,
+        // email: credentials.email,
         password: credentials.password
       }
     }

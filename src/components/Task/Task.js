@@ -104,17 +104,18 @@ class Task extends Component {
     const fullDate = month + '/' + day + '/' + year
     return (
       <div className="task">
+        <button type="button" className="delete-button" onClick={this.destroyTask}>X</button><br/>
         <h6>{task.category}</h6><br/>
         <p>{task.title}</p>
         <p>{task.text}</p>
         <p>Date Added: {fullDate}</p>
-        <button type="button" className="btn btn-primary" onClick={this.handleClick}>Edit</button>
-        <button type="button" className="btn btn-dark" onClick={this.destroyTask}>Delete</button><br/>
+        <button type="button" className="btn btn-primary" onClick={this.handleClick}> Edit </button>
+        {/* <button type="button" className="btn btn-dark" onClick={this.destroyTask}>Delete</button><br/> */}
         {/* <Link to={`/tasks/${this.props.match.params.id}/update`}>
           <button>Update</button>
         </Link> */}
         <p></p><br/>
-        <Link to='/tasks'>Back to all tasks 📋</Link>
+        <Link className="back" to='/tasks'>Back to all tasks <img src="../clipboard.png" height="40"></img></Link>
       </div>
     )
   }

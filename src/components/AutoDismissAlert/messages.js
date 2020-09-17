@@ -2,7 +2,7 @@ export default {
   signUpSuccess: 'Succesfully registered! You\'ve been signed in as well.',
   signUpFailure: 'Registration failed. Email may be taken, or passwords don\'t match.',
   signInSuccess: 'Welcome!',
-  signInFailure: 'Failed to sign in. Check your email and password and try again.',
+  signInFailure: 'Failed to sign in. Check your username and password and try again.',
   signOutSuccess: 'Come back soon!',
   changePasswordSuccess: 'Password changed successfully!',
   changePasswordFailure: 'Failed to change passwords. Check your old password and try again.',
@@ -16,5 +16,5 @@ export default {
   showTaskFailure: 'Cannot View Your Task At This Time',
   updateTaskSuccess: 'Updated Task Successfully!',
   updateTaskFailure: 'Task Failed to Populate!',
-  taskEmpty: 'You Can\'t 👀 What Isn\'t There! Add Some Tasks!'
+  taskEmpty: 'No Tasks Yet! Let\'s Get Started!'
 }
