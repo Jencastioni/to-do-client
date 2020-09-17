@@ -46,9 +46,15 @@ body {
     color: rgba(26, 23, 23, 0.5);
 }
 
+// back to all tasks button
+.back {
+    color: black;
+    text-decoration: none;
+}
 
 h1 {
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
   color: white;
   font-size: 100px;
   font-weight: 100px;
@@ -68,7 +74,7 @@ h2  {
     // position: sticky;
     text-align: center;
     justify-content: center;
-    }
+}
 h3 {
   align-items: center;
   font-size: 50px;
@@ -77,7 +83,11 @@ h3 {
 //   position: sticky;
 //   text-align: center;
 }
-
+.about  {
+    font-size: 1.5em;
+    text-align: center;
+    justify-content: center;
+}
 //this is the styling for the second row of category icons
 //remove h4 when not using categories as a line <br> list
 h4 {
@@ -246,11 +256,11 @@ row {
   color: black;
   background-color: $background-color;
   border: 0;
-  border-radius: 70px;
+  border-radius: 20px;
   border-width: thin;
   font-size: 25px;
   text-align: center;
-  // width: 50%;
+  margin: 2px;
   &:hover {
     background-color: rgb(9,191,1);
     color: white;
@@ -271,6 +281,22 @@ row {
     position: relative;
   }
 
+.delete-button {
+  color: white;
+  background-color: red;
+  border: 0;
+  border-radius: 20px;
+  border-width: thin;
+  font-size: 25px;
+  text-align: right;
+  margin-left: 95%;
+  padding: 0 12px;
+  &:hover {
+    background-color:$background-color;
+    color: white;
+  }
+}
+
 //.menupicture {
     // float: right;
     // align-items: right;
@@ -280,7 +306,7 @@ row {
   // }
 
 .tasks {
-  background-color: mintcream;
+//   background-color: mintcream;
   color: #000;
   float: center;
   border-radius: 30px;
@@ -369,7 +395,7 @@ li {
   color: black;
   background-color: white;
   border-radius: 10px;
-  opacity: 0.8;
+  opacity: 0.6;
   text-align: center;
 }
 
@@ -377,6 +403,27 @@ li {
   color: #000;
   background-color: white;
   border-radius: 10px;
-  opacity: 0.8;
+  opacity: 0.6;
   text-align: center;
+}
+.alert-dismissible .close {
+    color: mintcream;
+  }
+  
+button:hover {
+    background-color: none;
+}
+.card-body {
+    margin: 3px;
+    background-color: $background-color;
+}
+.card-footer{
+    background-color: mintcream;
+}
+.card-title{
+    font-size: 50px;
+}
+.task-category {
+    font-size: 30px;
+    font-weight: bold;
 }

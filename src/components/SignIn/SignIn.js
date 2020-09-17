@@ -13,7 +13,7 @@ class SignIn extends Component {
 
     this.state = {
       username: '',
-      email: '',
+      // email: '',
       password: ''
     }
   }
@@ -36,7 +36,7 @@ class SignIn extends Component {
       }))
       .then(() => history.push('/'))
       .catch(error => {
-        this.setState({ username: '', email: '', password: '' })
+        this.setState({ username: '', password: '' })
         msgAlert({
           heading: 'Sign In Failed with error: ' + error.message,
           message: messages.signInFailure,
@@ -46,7 +46,7 @@ class SignIn extends Component {
   }
 
   render () {
-    const { username, email, password } = this.state
+    const { username, password } = this.state
 
     return (
       <div className="row">
@@ -64,7 +64,7 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Form.Group controlId="email">
+            {/* <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
@@ -74,7 +74,7 @@ class SignIn extends Component {
                 placeholder="Enter email"
                 onChange={this.handleChange}
               />
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group controlId="password">
               <Form.Label>Password</Form.Label>
               <Form.Control
