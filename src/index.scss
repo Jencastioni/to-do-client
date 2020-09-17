@@ -252,7 +252,7 @@ row {
   text-align: center;
   // width: 50%;
   &:hover {
-    background-color: rgb(40, 193, 58);
+    background-color: rgb(9,191,1);
     color: white;
   }
 }
@@ -292,7 +292,7 @@ row {
   font-size: 25px;
   margin-top: 200px;
   margin-bottom: -75px;
-  margin-left: 100px;
+  margin-left: 16%;
   outline: none;
   padding: 20px;
   transition: .5s ease;
@@ -313,7 +313,7 @@ row {
     margin-top: 200px;
     padding-top:200px;
     margin-bottom: -75px;
-    margin-left: 100px;
+    margin-left: 16%;
     outline: none;
     padding: 20px;
     transition: .5s ease;
@@ -333,7 +333,7 @@ li {
 }
 
 // .updates controls 'Manage Your Tasks' section
-.updates {
+.updateForm {
   background-color: mintcream;
   color: #000;
   float: center;
@@ -347,8 +347,7 @@ li {
   margin-top: 200px;
   margin-bottom: -75px;
 //   margin: auto;
-  margin-left: 150px;
-  outline: none;
+  margin-left: 20%;
   padding: 20px;
   transition: .5s ease;
   width: 60%;

@@ -71,7 +71,7 @@ class App extends Component {
             <TaskCreate user={user} match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/about' render={() => (
-            <About msgAlert={this.msgAlert} user={user} />
+            <About />
           )} />
         </main>
       </Fragment>

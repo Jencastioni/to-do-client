@@ -5,9 +5,9 @@ import Form from 'react-bootstrap/Form'
 const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
 
   <div className="updates">
-    <Form onSubmit={handleSubmit}>
+    <Form className="updateForm" onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
-        <h2>Task</h2><br/>
+        <h3>Task</h3><br/>
         {/* <p> </p> */}
         <Form.Label>Category</Form.Label>
         <Form.Control as="select" value={task.category} name='category' onChange={handleChange}>

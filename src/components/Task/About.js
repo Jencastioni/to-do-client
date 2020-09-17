@@ -10,14 +10,9 @@ class About extends Component {
     return (
       <div>
         <h2>About CheckIt</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
+        <p>CheckIt is a simple task manager app allows you to stay on top of the things you need to do.</p>
 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        <p>You should not have to read a manual to use an app to stay organized. CheckIt allows you to manage your tasks by priority levels and check them off as you complete them.</p>
       </div>
     )
   }
