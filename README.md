@@ -1,22 +1,59 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# CheckIt - Task Manager App
+
+CheckIt is a single-page web application designed for anyone who wants to keep organized.You shouldn't have to read a manual to use an app that helps you stay organized and with CheckIt you don't have to! 
+
+CheckIt allows users to keep track of their everyday tasks. Users can add, update and delete tasks as they complete them, and each task is categorized into 1 of 4 priorities per the Eisnehower Matrix (Important and Urgent, Important and Not Urgent, Urgent and Not Important, Not Urgent and Not Important).
 
 
+## Important Links
 
-## Tasks
+- [CheckIt API Repo](https://github.com/LadiesLoveCleanCode/MangoDB-api)
+- [Deployed API](https://floating-mesa-18024.herokuapp.com)
+- [Deployed Client](https://ladieslovecleancode.github.io/MangoDB-client)
+- [Requirements](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/blob/master/requirements.md)
 
-Developers should run these often!
 
-- `npm run nag`: runs code quality analysis tools on your code and complains.
-- `npm run make-standard`: reformats all your code in the JavaScript Standard
-  Style.
-- `npm run start`: generates bundles, watches, and livereloads.
-- `npm run build`: place bundled styles and scripts where `index.html` can find
-    them
-- `npm run deploy`: builds and deploys master branch
+## Planning Story
 
-## [License](LICENSE)
+I began planning on creating some type of to-do list app as I am always struggling to stay organized. I drew up my wiredrame and ERD and was able to formulte a plan to create it. My app remained unnamed until days later!
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
-# to-do-client
+The first step was to set up the back end API and make sure to enable CRUD actions on authentication and resources. Next, was setting up the front end, following a similar CRUD process. Finally, I designed the front end using the React framework.
+
+
+### User Stories
+
+- As an unregistered user, I would like to sign up with email and password.
+- As a registered user, I would like to sign in with email and password.
+- As a signed in user, I would like to change password.
+- As a signed in user, I would like to sign out.
+- As a signed in user, I would like to create a task.
+- As a signed in user, I would like to update my task.
+- As a signed in user, I would like to delete my itask.
+- As a signed in user, I would like to see all tasks.
+- As a signed in user, I would like to see completed tasks.
+- As a signed in user, I would like my tasks to be organized by priority and date.
+
+
+### Technologies Used
+
+- HTML/CSS
+- Bootstrap
+- Javascript
+- React
+- React Router
+- Express.js
+- MongoDB
+
+
+### Unsolved Problems
+
+In future iterations of CheckIt I would like:
+
+- Have a checkmark that can be clicked to send tasks to "Completed"
+- Further Categories to organize daily tasks, chores, school, work etc...
+
+
+## Images
+
+#### Wireframe:
+- [CheckIt Wireframe](https://imgur.com/a/vyS31Du)

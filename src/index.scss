@@ -10,24 +10,18 @@ $text-color: black;
 
 body {
   background-color: rgb(170, 249, 215);
-//   background-image: url('smoothie_stand.png');
-  // background-position: bottom fixed;
   background-size: contain;
   margin-bottom: 600px;
   font-family: 'Raleway', sans-serif;
   font-size: 25px;
-//   margin-top:100px;
-  //overflow: hidden;
-  //width: 100%;   ***don't think this is necessary due to the background-size: cover
 }
 
-
-.container {
-  margin: auto;
-  position: center;
+// .container {
+//   margin: auto;
+//   position: center;
 //   width: 30em;
 //   height: 20em;
-}
+// }
 
 .Navbar {
   background-color: #77f2bd;
@@ -60,7 +54,6 @@ h1 {
   font-weight: 100px;
   position: absolute;
   text-align: center;
-//   text-shadow: -1px 0 black, 0 4px black, 2px 0 black, 0 -1px black;
   top: 0;
   vertical-align: top;
   margin-top: 100px;
@@ -83,13 +76,13 @@ h3 {
 //   position: sticky;
 //   text-align: center;
 }
+
 .about  {
     font-size: 1.5em;
     text-align: center;
     justify-content: center;
 }
-//this is the styling for the second row of category icons
-//remove h4 when not using categories as a line <br> list
+
 h4 {
   position: center;
   margin-top: 40px;
@@ -104,34 +97,14 @@ h5 {
   text-align: center;
 }
 
-//h6 holds the styling for the titles "Sign Up" and "Sign In"
 h6 {
   font-family: 'Raleway', sans-serif;
-  //font-family: 'Sriracha', cursive;
   color: black;
   font-size: 40px;
   text-align: center;
   position: relative;
   align-items: center;
-//   text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
   margin-top: 0;
-}
-
-//h7 holds styling for "Items" titles
-h7 {
-  align-items: center;
-  color: black;
-  font-family: 'Raleway', sans-serif;
-  //font-family: 'Sriracha', cursive;
-  font-size: 40px;
-  position: relative;
-  text-align: center;
-  text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
-  //margin-top: 140px;
-}
-
-h8 {
-  font-size: 20px;
 }
 
 .auth-btns {
@@ -219,7 +192,7 @@ button {
 //this changes all forms
 form {
   background-color: $hover-font-color;
-  opacity: .8;
+  opacity: .7;
   color: #000;
   float: center;
   border-radius: 30px;
@@ -234,7 +207,7 @@ form {
   outline: none;
   padding: 20px;
   transition: .5s ease;
-  width: 80%;
+//   width: 80%;
   }
 
 //row is the class name for the default sign in/sign out section
@@ -297,14 +270,6 @@ row {
   }
 }
 
-//.menupicture {
-    // float: right;
-    // align-items: right;
-    // margin-right: -700px;
-    // margin-top: -100px;
-    // padding: 5px;
-  // }
-
 .tasks {
 //   background-color: mintcream;
   color: #000;
@@ -348,12 +313,8 @@ row {
 
 ul {
   list-style-type: none;
- }
+}
 
-// // class name is wrong
-// navbar-text mr-2 {
-//   color: $button-color;
-// }
 li {
   width: 90%;
 }
@@ -377,6 +338,7 @@ li {
   padding: 20px;
   transition: .5s ease;
   width: 60%;
+  opacity: .7;
 }
 
 // .change controls the styling for 'Change Password'
@@ -395,16 +357,18 @@ li {
   color: black;
   background-color: white;
   border-radius: 10px;
-  opacity: 0.6;
+  opacity: 0.9;
   text-align: center;
+  border-style: solid;
 }
 
 .alert-danger {
   color: #000;
   background-color: white;
   border-radius: 10px;
-  opacity: 0.6;
+  opacity: 0.9;
   text-align: center;
+  border-style: solid;
 }
 .alert-dismissible .close {
     color: mintcream;
