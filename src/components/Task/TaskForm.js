@@ -12,11 +12,11 @@ const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
         <Form.Label>Priority Level</Form.Label>
         <Form.Control as="select" value={task.category} name='category' onChange={handleChange}>
           <option>Choose a Priority Level...</option>
-          <option>1. Important and Urgent</option>
-          <option>2. Important and Not Urgent</option>
-          <option>3. Urgent and Not Important</option>
-          <option>4. Not Urgent and Not Important</option>
-          <option>0. Completed</option>
+          <option>1-Important and Urgent</option>
+          <option>2-Important and Not Urgent</option>
+          <option>3-Urgent and Not Important</option>
+          <option>4-Not Urgent and Not Important</option>
+          <option>0-Completed</option>
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">
