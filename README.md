@@ -55,8 +55,8 @@ In future iterations of CheckIt I would like:
 
 ## Images
 
-### CheckIt
-![CheckIt](https://imgur.com/a/XNIIHyJ)
+### CheckIt:
+![CheckIt](https://user-images.githubusercontent.com/66800336/93613826-5aff0480-f99f-11ea-88e5-b35b7770c434.png)
 
 #### Wireframe:
 - [CheckIt Wireframe](https://imgur.com/a/vyS31Du)
