@@ -179,7 +179,6 @@ button {
 // .input styles the form fields for sign up and sign in
 .input {
   border: 2px lighter;
-  // border: 0px;
   border-radius: 30px;
   box-sizing: border-box;
   font-size: 20px;
@@ -196,7 +195,6 @@ form {
   color: #000;
   float: center;
   border-radius: 30px;
-  // height: 360px;
   line-height: 40px;
   text-align: center;
   border: 2px lighter;
@@ -212,7 +210,7 @@ form {
 
 //row is the class name for the default sign in/sign out section
 row {
-  background-color: white;
+  background-color: mintcream;
   color: $hover-font-color;
   border-radius: 60px;
   clear: both;
@@ -222,7 +220,7 @@ row {
   padding: 40px;
   position: relative;
   width: 100%;
-    //width: 50%;
+  opacity: .8;
   }
 
 .btn {
@@ -240,7 +238,7 @@ row {
   }
 }
 
-  col-sm-10 col-md-8 mx-auto mt-5 {
+col-sm-10 col-md-8 mx-auto mt-5 {
     background-color: $text-color;
     color: $hover-font-color;
     border-radius: 60px;
@@ -252,7 +250,7 @@ row {
     //width: 50%;
     justify-content: center;
     position: relative;
-  }
+}
 
 .delete-button {
   color: white;
@@ -341,7 +339,7 @@ li {
   opacity: .7;
 }
 
-// .change controls the styling for 'Change Password'
+// .change controls the styling for Change Password
 .change {
   color: $hover-font-color;
   background-color: $button-color;
