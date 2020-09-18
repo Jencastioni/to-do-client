@@ -2,19 +2,14 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import messages from '../AutoDismissAlert/messages'
-
-// Import axios so we can make HTTP requests
 import axios from 'axios'
 
 class Task extends Component {
   constructor (props) {
-    // this makes sure that `this.props` is set in the constructor
     super(props)
 
     this.state = {
-      // Initially, our item state will be null, until the API request finishes
       task: null,
-      // initially this item has not been deleted yet
       deleted: false,
       redirect: false
     }
@@ -82,13 +77,9 @@ class Task extends Component {
       return <p>Loading...</p>
     }
 
-    // if the deleted state is true
     if (deleted) {
-      // redirect to the home page
       return <Redirect to={{
-        // Redirect to the home page ('/')
         pathname: '/tasks',
-        // Pass along a message, in state, that we can show
         state: { msgAlert: 'Deleted task successfully' }
       }} />
     }
@@ -110,10 +101,6 @@ class Task extends Component {
         <p>{task.text}</p>
         <p>Date Added: {fullDate}</p>
         <button type="button" className="btn btn-primary" onClick={this.handleClick}> Edit </button>
-        {/* <button type="button" className="btn btn-dark" onClick={this.destroyTask}>Delete</button><br/> */}
-        {/* <Link to={`/tasks/${this.props.match.params.id}/update`}>
-          <button>Update</button>
-        </Link> */}
         <p></p><br/>
         <Link className="back" to='/tasks'>Back to all tasks <img src="../clipboard.png" height="40"></img></Link>
       </div>

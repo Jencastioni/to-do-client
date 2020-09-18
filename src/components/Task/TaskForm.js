@@ -8,7 +8,6 @@ const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
     <Form className="updateForm" onSubmit={handleSubmit}>
       <Form.Group controlId="exampleForm.ControlSelect1">
         <h3>Task</h3><br/>
-        {/* <p> </p> */}
         <Form.Label>Priority Level</Form.Label>
         <Form.Control as="select" value={task.category} name='category' onChange={handleChange}>
           <option>Choose a Priority Level...</option>

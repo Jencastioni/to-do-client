@@ -26,7 +26,6 @@ class TaskCreate extends Component {
 
     this.setState(prevState => {
       const updatedField = { [event.target.name]: event.target.value }
-
       const editedTask = Object.assign({}, prevState.task, updatedField)
       return { task: editedTask }
     })
