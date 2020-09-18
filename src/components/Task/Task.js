@@ -54,7 +54,6 @@ class Task extends Component {
         'Authorization': `Bearer ${this.props.user.token}`
       }
     })
-      // update the `deleted` state to be `true`
       .then(() => this.setState({ deleted: true }))
       .then(() => msgAlert({
         heading: 'Deleted Task Successfully',
