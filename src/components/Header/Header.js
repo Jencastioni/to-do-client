@@ -21,7 +21,7 @@ const unauthenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar className="Navbar" expand="md">
-    <Navbar.Brand href="/">
+    <Navbar.Brand href="#">
       <img src="check.png" height="20"></img>CheckIt
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
