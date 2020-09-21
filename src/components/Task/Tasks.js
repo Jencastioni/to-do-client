@@ -57,14 +57,13 @@ class Tasks extends Component {
   destroyTask = () => {
     const { msgAlert } = this.props
     axios({
-      url: `${apiUrl}/tasks/${this.props.match.params._id}`,
+      url: `${apiUrl}/tasks/${this.props.match.params.id}`,
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
       }
     })
       .then(() => this.setState({ deleted: true }))
-      .then(() => Tasks())
       .then(() => msgAlert({
         heading: 'Deleted Task Successfully',
         message: messages.deleteTaskSuccess,

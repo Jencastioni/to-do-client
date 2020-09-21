@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import TaskForm from './TaskForm'
+import UpdateForm from './UpdateForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import messages from '../AutoDismissAlert/messages'
@@ -20,9 +20,12 @@ class TaskUpdate extends Component {
     }
   }
   componentDidMount () {
-    // make a request to get the book, with the current routes'id
-    axios(`${apiUrl}/tasks/${this.props.match.params.id}`)
-      // set the `book` state to the `book` data we got back from the response (res.data.book)
+    axios({
+      url: `${apiUrl}/tasks/${this.props.match.params.id}`,
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
       .then(res => this.setState({ task: res.data.task }))
       .catch(console.error)
   }
@@ -43,7 +46,7 @@ class TaskUpdate extends Component {
     event.preventDefault()
     const { msgAlert } = this.props
     axios({
-      url: `${apiUrl}/tasks/${this.props.match.params.id}`,
+      url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
@@ -57,13 +60,13 @@ class TaskUpdate extends Component {
         message: messages.updateTaskSuccess,
         variant: 'success'
       }))
-    //   .then((res) => {
-    //     if (res.status === 201) {
-    //       this.setState({ createdId: res.data.task._id })
-    //     } else if (res.status === 204) {
-    //       this.setState({ updated: true })
-    //     }
-    //   })
+      // .then((res) => {
+      //   if (res.status === 201) {
+      //     this.setState({ createdId: res.data.task._id })
+      //   } else if (res.status === 204) {
+      //     this.setState({ updated: true })
+      //   }
+      // })
       .catch(error => {
         msgAlert({
           heading: 'Updated Tasks Failed' + error.message,
@@ -83,7 +86,7 @@ class TaskUpdate extends Component {
 
     return (
       <div>
-        <TaskForm
+        <UpdateForm
           task={task}
           handleChange={handleChange}
           handleSubmit={handleSubmit}

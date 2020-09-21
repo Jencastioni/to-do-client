@@ -42,14 +42,16 @@ class TaskCreate extends Component {
       },
       data: { task: this.state.task }
     })
-      .then(res => this.setState({ createdId: res.data.task._id }))
-      .then(console.log(this.state))
+      .then(res => {
+        this.setState({ createdId: res.data.task._id })
+      })
       .then(() => msgAlert({
         heading: 'Created Task Successfully',
         message: messages.createTaskSuccess,
         variant: 'success'
       }))
       .catch(error => {
+        console.log(error)
         msgAlert({
           heading: 'Created Tasks Failed' + error.message,
           message: messages.createTaskFailure,

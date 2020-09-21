@@ -31,57 +31,57 @@
 //     })
 //   }
 
-//   handleSubmit = (event) => {
-//     event.preventDefault()
-//     const { msgAlert } = this.props
-//     axios({
-//       url: `${apiUrl}/tasks`,
-//       method: 'GET',
-//       headers: {
-//         'Authorization': `Bearer ${this.props.user.token}`
-//       }
-//     })
-//       .then(res => {
-//         const task = res.data.tasks.find((task) => {
-//           return task.title === this.state.task.title
-//         })
-//         if (task) {
-//           return axios({
-//             url: `${apiUrl}/tasks/${task._id}`,
-//             method: 'PATCH',
-//             headers: {
-//               'Authorization': `Bearer ${this.props.user.token}`
-//             },
-//             data: { task: this.state.task }
-//           })
-//         } else {
-//           return axios({
-//             url: `${apiUrl}/tasks`,
-//             method: 'POST',
-//             headers: {
-//               'Authorization': `Bearer ${this.props.user.token}`
-//             },
-//             data: { task: this.state.task }
-//           })
-//         }
-//       })
-//       .then((res) => {
-//         if (res.status === 201) {
-//           this.setState({ createdId: res.data.task._id })
-//         } else if (res.status === 204) {
-//           this.setState({ updated: true })
-//         }
-//       })
-//       .catch((error) => {
-//         if (error.response.status === 420) {
-//           return msgAlert({
-//             heading: 'You can\'t have negative values 😱',
-//             message: messages.updateTaskFailure,
-//             variant: 'danger'
-//           })
-//         }
-//       })
-//   }
+  // handleSubmit = (event) => {
+  //   event.preventDefault()
+  //   const { msgAlert } = this.props
+  //   axios({
+  //     url: `${apiUrl}/tasks`,
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${this.props.user.token}`
+  //     }
+  //   })
+  //     .then(res => {
+  //       const task = res.data.tasks.find((task) => {
+  //         return task.title === this.state.task.title
+  //       })
+  //       if (task) {
+  //         return axios({
+  //           url: `${apiUrl}/tasks/${task._id}`,
+  //           method: 'PATCH',
+  //           headers: {
+  //             'Authorization': `Bearer ${this.props.user.token}`
+  //           },
+  //           data: { task: this.state.task }
+  //         })
+  //       } else {
+  //         return axios({
+  //           url: `${apiUrl}/tasks`,
+  //           method: 'POST',
+  //           headers: {
+  //             'Authorization': `Bearer ${this.props.user.token}`
+  //           },
+  //           data: { task: this.state.task }
+  //         })
+  //       }
+  //     })
+  //     .then((res) => {
+  //       if (res.status === 201) {
+  //         this.setState({ createdId: res.data.task._id })
+  //       } else if (res.status === 204) {
+  //         this.setState({ updated: true })
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       if (error.response.status === 420) {
+  //         return msgAlert({
+  //           heading: 'You can\'t have negative values 😱',
+  //           message: messages.updateTaskFailure,
+  //           variant: 'danger'
+  //         })
+  //       }
+  //     })
+  // }
 
 //   render () {
 //     const { task, createdId, updated } = this.state
