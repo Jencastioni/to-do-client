@@ -11,10 +11,7 @@ class About extends Component {
         <p>By using the famous Eisenhower Matrix, you choose your priority levels and check each task off as you complete it.</p>
         <img src="../matrix.png" height="450"></img><br/>
         <br/>
-        <h3 className="about">Getting Started</h3>
-        <br/><p>Tasks are sorted by Highest Priority, Important, <br/> Low Priority to Not Important.<br/>
-          <br/>They are then sorted by Date (oldest to newest) <br/> within each category.<br/>
-          <br/>Completed tasks will be sent to the top so <br/> do NOT forget to delete them!</p><br/>
+        <p></p>
         <Link className="back" to='/#/'>Back to home<img src="../home.png" height="30"></img></Link>
       </div>
     )

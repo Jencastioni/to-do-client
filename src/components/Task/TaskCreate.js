@@ -44,7 +44,7 @@ class TaskCreate extends Component {
     })
       .then(res => {
         const task = res.data.tasks.find((task) => {
-          return task
+          return task.category === this.state.task.category
         })
         if (task) {
           return axios({
