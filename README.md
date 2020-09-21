@@ -7,9 +7,9 @@ CheckIt allows users to keep track of their everyday tasks. Users can add, updat
 
 ## Important Links
 
-- [CheckIt API Repo](https://github.com/LadiesLoveCleanCode/MangoDB-api)
-- [Deployed API](https://floating-mesa-18024.herokuapp.com)
-- [Deployed Client](https://ladieslovecleancode.github.io/MangoDB-client)
+- [CheckIt API Repo](https://github.com/Jencastioni/to-do-api)
+- [Deployed API](https://floating-reef-69808.herokuapp.com/)
+- [Deployed Client](https://github.com/Jencastioni/to-do-client)
 - [Requirements](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/blob/master/requirements.md)
 
 
@@ -45,6 +45,38 @@ The first step was to set up the back end API and make sure to enable CRUD actio
 - MongoDB
 
 
+## Tasks
+
+`npm` is used as a task runner for this project. These are the commands available:
+
+| Command                | Effect                                                                                                      |
+|------------------------|-------------------------------------------------------------------------------------------------------------|
+| `npm run server`       | Starts a development server with `nodemon` that automatically refreshes when you change something.                                                                                         |
+| `npm start`             | Runs an arbitrary command specified in the package’s "start"  property of its "scripts" object.                                                                                     |
+| `npm test`             | Runs automated tests.                                                                                       |
+
+
+### Authentication
+
+| Verb   | URI Pattern            | Controller#Action |
+|--------|------------------------|-------------------|
+| POST   | `/sign-up`             | `users#signup`    |
+| POST   | `/sign-in`             | `users#signin`    |
+| PATCH  | `/change-password/` | `users#changepw`  |
+| DELETE | `/sign-out/`        | `users#signout`   |
+
+
+### Catalog of Routes
+
+Verb         |	URI Pattern
+------------ | -------------
+| GET | /tasks  |
+| GET | /tasks/:id  |
+| POST | /tasks  |
+| PATCH | /tasks/:id  |
+| DELETE | /tasks/:id  |
+
+
 ### Unsolved Problems
 
 In future iterations of CheckIt I would like:
@@ -54,10 +86,9 @@ In future iterations of CheckIt I would like:
 - Have check boxes for each completed task.
 
 
-## Images
 
 ### CheckIt
 ![CheckIt](https://media.git.generalassemb.ly/user/28872/files/86d7b580-f9b2-11ea-805e-b723f88655ba)
 
 #### Wireframe:
-- [CheckIt Wireframe](https://imgur.com/a/vyS31Du)
+- ![CheckIt Wireframe](https://media.git.generalassemb.ly/user/28872/files/b5f65d00-fc26-11ea-9655-2745b0b30ea2)

@@ -101,7 +101,7 @@ class Task extends Component {
         <p>Due Date: {fullDate}</p>
         <button type="button" className="btn btn-primary" onClick={this.handleClick}> Edit </button>
         <p></p><br/>
-        <Link className="back" to='/tasks'>Back to all tasks <img src="../clipboard.png" height="40"></img></Link>
+        <Link className="back" to='/tasks'>Back to all tasks <img src="clipboard.png" height="40"></img></Link>
       </div>
     )
   }

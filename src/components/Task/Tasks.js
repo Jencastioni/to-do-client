@@ -126,7 +126,7 @@ class Tasks extends Component {
               {tasks}
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted"><img src="../check.png" height="20"></img>CheckIt</small>
+              <small className="text-muted"><img src="check.png" height="20"></img>CheckIt</small>
             </Card.Footer>
           </Card>
         </CardGroup>
