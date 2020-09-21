@@ -20,7 +20,7 @@
 //       </Form.Group>
 //       <Form.Group controlId="exampleForm.ControlSelect2">
 //         <Form.Label>{task.title}</Form.Label>
-//         {/* <Form.Control type="null" placeholder="ex: Today's Chores" value={task.title} name='title' onChange={handleChange} /> */}
+//         <Form.Control type="null" placeholder="ex: Today's Chores" value={task.title} name='title' onChange={handleChange} />
 //       </Form.Group>
 //       <Form.Group controlId="exampleForm.ControlSelect3">
 //         <Form.Label>Text</Form.Label>
@@ -35,6 +35,7 @@
 //         <button type="button" className="btn btn-dark">Cancel</button>
 //       </Link><br/>
 //       <p>*All Fields Required.</p>
+//       <p>*Title must be the same to update.</p>
 //     </Form>
 //   </div>
 // )
