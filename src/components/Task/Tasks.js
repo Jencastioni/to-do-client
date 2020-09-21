@@ -54,16 +54,24 @@ class Tasks extends Component {
       })
   }
 
-  destroyTask = () => {
+  destroyTask = (taskId) => {
     const { msgAlert } = this.props
     axios({
-      url: `${apiUrl}/tasks/${this.props.match.params.id}`,
+      url: `${apiUrl}/tasks/${taskId}`,
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
       }
     })
-      .then(() => this.setState({ deleted: true }))
+      .then(() => {
+        return axios({
+          url: (`${apiUrl}/tasks`),
+          headers: {
+            'Authorization': `Bearer ${this.props.user.token}`
+          }
+        })
+      })
+      .then((res) => this.setState({ tasks: res.data.tasks }))
       .then(() => msgAlert({
         heading: 'Deleted Task Successfully',
         message: messages.deleteTaskSuccess,
@@ -79,22 +87,6 @@ class Tasks extends Component {
   }
 
   render () {
-    // const { task, deleted, redirected } = this.state
-
-    // if (!task) {
-    //   return <p>Loading...</p>
-    // }
-
-    // if (deleted) {
-    //   return <Redirect to={{
-    //     pathname: '/tasks',
-    //     state: { msgAlert: 'Deleted task successfully' }
-    //   }} />
-    // }
-
-    // if (redirected) {
-    //   return <Redirect to={{ pathname: '/tasks-create' }} />
-    // }
     const tasks = this.state.tasks.map(task => {
       const date = new Date(task.date)
       const year = date.getFullYear()
@@ -106,7 +98,7 @@ class Tasks extends Component {
           <Card style={{ width: '30rem', margin: 'auto', textAlign: 'center' }} >
             <Card.Body>
               <div className="task-category">
-                <button type="button" className="delete-button" onClick={this.destroyTask}>X</button>
+                <button type="button" className="delete-button" onClick={() => this.destroyTask(task._id)}>X</button>
                 {task.category}<br/>
               </div>
               <Link to={`/tasks/${task._id}`}>

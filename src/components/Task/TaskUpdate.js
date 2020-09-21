@@ -53,20 +53,12 @@ class TaskUpdate extends Component {
       },
       data: { task: this.state.task }
     })
-    //   .then(res => this.setState({ task: res.data.task }))
       .then(res => this.setState({ updated: true }))
       .then(() => msgAlert({
         heading: 'Updated Task Successfully',
         message: messages.updateTaskSuccess,
         variant: 'success'
       }))
-      // .then((res) => {
-      //   if (res.status === 201) {
-      //     this.setState({ createdId: res.data.task._id })
-      //   } else if (res.status === 204) {
-      //     this.setState({ updated: true })
-      //   }
-      // })
       .catch(error => {
         msgAlert({
           heading: 'Updated Tasks Failed' + error.message,

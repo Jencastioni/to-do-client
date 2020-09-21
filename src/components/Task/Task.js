@@ -84,7 +84,7 @@ class Task extends Component {
     }
 
     if (redirected) {
-      return <Redirect to={{ pathname: '/tasks-create' }} />
+      return <Redirect to={{ pathname: `/tasks/${this.props.match.params.id}/update` }} />
     }
 
     const date = new Date(task.date)

@@ -34,8 +34,6 @@ const UpdateForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
       <Link to={cancelPath}>
         <button type="button" className="btn btn-dark">Cancel</button>
       </Link><br/>
-      <p>*All Fields Required.</p>
-      <p>*Title must be the same to update.</p>
     </Form>
   </div>
 )
