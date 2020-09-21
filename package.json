@@ -1,6 +1,6 @@
 {
   "name": "to-do-client",
-  "homepage": "https://jencastioni.github.io/to-do-list",
+  "homepage": "https://jencastioni.github.io/to-do-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
