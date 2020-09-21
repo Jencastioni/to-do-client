@@ -51,6 +51,7 @@ In future iterations of CheckIt I would like:
 
 - Have a checkmark that can be clicked to send tasks to "Completed"
 - Further Categories to organize daily tasks, chores, school, work etc...
+- Have check boxes for each completed task.
 
 
 ## Images
