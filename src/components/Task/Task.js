@@ -84,7 +84,7 @@ class Task extends Component {
     }
 
     if (redirected) {
-      return <Redirect to={{ pathname: '/tasks-create' }} />
+      return <Redirect to={{ pathname: `/tasks/${this.props.match.params.id}/update` }} />
     }
 
     const date = new Date(task.date)
@@ -98,7 +98,7 @@ class Task extends Component {
         <h6>{task.category}</h6><br/>
         <p>{task.title}</p>
         <p>{task.text}</p>
-        <p>Date Added: {fullDate}</p>
+        <p>Due Date: {fullDate}</p>
         <button type="button" className="btn btn-primary" onClick={this.handleClick}> Edit </button>
         <p></p><br/>
         <Link className="back" to='/tasks'>Back to all tasks <img src="../clipboard.png" height="40"></img></Link>

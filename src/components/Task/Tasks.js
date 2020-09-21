@@ -54,6 +54,38 @@ class Tasks extends Component {
       })
   }
 
+  destroyTask = (taskId) => {
+    const { msgAlert } = this.props
+    axios({
+      url: `${apiUrl}/tasks/${taskId}`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
+      .then(() => {
+        return axios({
+          url: (`${apiUrl}/tasks`),
+          headers: {
+            'Authorization': `Bearer ${this.props.user.token}`
+          }
+        })
+      })
+      .then((res) => this.setState({ tasks: res.data.tasks }))
+      .then(() => msgAlert({
+        heading: 'Deleted Task Successfully',
+        message: messages.deleteTaskSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: 'Delete Task Failure' + error.message,
+          message: messages.deleteTaskFailure,
+          variant: 'danger'
+        })
+      })
+  }
+
   render () {
     const tasks = this.state.tasks.map(task => {
       const date = new Date(task.date)
@@ -66,12 +98,13 @@ class Tasks extends Component {
           <Card style={{ width: '30rem', margin: 'auto', textAlign: 'center' }} >
             <Card.Body>
               <div className="task-category">
+                <button type="button" className="delete-button" onClick={() => this.destroyTask(task._id)}>X</button>
                 {task.category}<br/>
               </div>
               <Link to={`/tasks/${task._id}`}>
                 {task.title}
               </Link><br/>
-              Date Added: {fullDate}
+              Due Date: {fullDate}
             </Card.Body>
           </Card>
         </div>

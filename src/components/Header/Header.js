@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#">Home</Nav.Link>
     <Nav.Link href="#about">About</Nav.Link>
     <Nav.Link href="#tasks-create">Manage My Tasks</Nav.Link>
     <Nav.Link href="#tasks">My Tasks</Nav.Link>
@@ -22,7 +21,7 @@ const unauthenticatedOptions = (
 
 const Header = ({ user }) => (
   <Navbar className="Navbar" expand="md">
-    <Navbar.Brand href="#">
+    <Navbar.Brand href="/">
       <img src="../check.png" height="20"></img>CheckIt
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

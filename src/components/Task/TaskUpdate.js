@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import UpdateForm from './UpdateForm'
-import TaskForm from './TaskForm'
+import UpdateForm from './UpdateForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 import messages from '../AutoDismissAlert/messages'
 
-class TaskCreate extends Component {
+class TaskUpdate extends Component {
   constructor (props) {
     super(props)
 
@@ -17,9 +16,18 @@ class TaskCreate extends Component {
         text: '',
         date: ''
       },
-      createdId: null,
       updated: false
     }
+  }
+  componentDidMount () {
+    axios({
+      url: `${apiUrl}/tasks/${this.props.match.params.id}`,
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      }
+    })
+      .then(res => this.setState({ task: res.data.task }))
+      .catch(console.error)
   }
 
   handleChange = event => {
@@ -27,59 +35,58 @@ class TaskCreate extends Component {
 
     this.setState(prevState => {
       const updatedField = { [event.target.name]: event.target.value }
+
       const editedTask = Object.assign({}, prevState.task, updatedField)
+
       return { task: editedTask }
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault()
     const { msgAlert } = this.props
     axios({
-      url: `${apiUrl}/tasks`,
-      method: 'POST',
+      url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+      method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
       },
       data: { task: this.state.task }
     })
-      .then(res => {
-        this.setState({ createdId: res.data.task._id })
-      })
+      .then(res => this.setState({ updated: true }))
       .then(() => msgAlert({
-        heading: 'Created Task Successfully',
-        message: messages.createTaskSuccess,
+        heading: 'Updated Task Successfully',
+        message: messages.updateTaskSuccess,
         variant: 'success'
       }))
       .catch(error => {
-        console.log(error)
         msgAlert({
-          heading: 'Created Tasks Failed' + error.message,
-          message: messages.createTaskFailure,
+          heading: 'Updated Tasks Failed' + error.message,
+          message: messages.updateTaskFailure,
           variant: 'danger'
         })
       })
   }
 
   render () {
-    const { task, createdId } = this.state
+    const { task, updated } = this.state
     const { handleChange, handleSubmit } = this
 
-    if (createdId) {
-      return <Redirect to={`/tasks/${createdId}`} />
+    if (updated) {
+      return <Redirect to={`/tasks/${this.props.match.params.id}`} />
     }
 
     return (
       <div>
-        <TaskForm
+        <UpdateForm
           task={task}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
-          cancelPath='/'
+          cancelPath={`/tasks/${this.props.match.params.id}`}
         />
       </div>
     )
   }
 }
 
-export default TaskCreate
+export default TaskUpdate
