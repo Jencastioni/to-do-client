@@ -55,13 +55,13 @@ class TaskUpdate extends Component {
     })
       .then(res => this.setState({ updated: true }))
       .then(() => msgAlert({
-        heading: 'Updated Task Successfully',
+        heading: 'Your Task Has Been Updated!',
         message: messages.updateTaskSuccess,
         variant: 'success'
       }))
       .catch(error => {
         msgAlert({
-          heading: 'Updated Tasks Failed' + error.message,
+          heading: 'Your Task Was Not Updated ' + error.message,
           message: messages.updateTaskFailure,
           variant: 'danger'
         })

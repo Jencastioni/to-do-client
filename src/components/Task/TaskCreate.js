@@ -47,14 +47,14 @@ class TaskCreate extends Component {
         this.setState({ createdId: res.data.task._id })
       })
       .then(() => msgAlert({
-        heading: 'Created Task Successfully',
+        heading: 'Success!',
         message: messages.createTaskSuccess,
         variant: 'success'
       }))
       .catch(error => {
         console.log(error)
         msgAlert({
-          heading: 'Created Tasks Failed' + error.message,
+          heading: 'Created Tasks Failed ' + error.message,
           message: messages.createTaskFailure,
           variant: 'danger'
         })
