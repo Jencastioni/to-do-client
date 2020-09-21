@@ -67,9 +67,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/tasks/:id' render={({ match }) => (
             <Task msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
-
           <AuthenticatedRoute user={user} path='/tasks-create' render={({ match }) => (
-            <TaskCreate user={user} match={match} msgAlert={this.msgAlert}/>
+            <TaskCreate match={match} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} path='/tasks/:id' render={({ match }) => (
             <TaskUpdate user={user} match={match} msgAlert={this.msgAlert}/>

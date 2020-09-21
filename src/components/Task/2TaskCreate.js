@@ -39,9 +39,11 @@ class TaskCreate extends Component {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${this.props.user.token}`
-      }
+      },
+      data: { task: this.state.task }
     })
       .then(res => this.setState({ createdId: res.data.task._id }))
+      .then(console.log(this.state))
       .then(() => msgAlert({
         heading: 'Created Task Successfully',
         message: messages.createTaskSuccess,
