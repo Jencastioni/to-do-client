@@ -27,7 +27,7 @@ const UpdateForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
         <Form.Control type="text" placeholder="ex: Fold Laundry" value={task.text} name='text' onChange={handleChange}/>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect4">
-        <Form.Label>Date Added</Form.Label>
+        <Form.Label>Due Date</Form.Label>
         <Form.Control type="date" placeholder="Date" value={task.date} name='date' onChange={handleChange}/>
       </Form.Group>
       <button type='submit' className="btn btn-primary">Submit</button>
