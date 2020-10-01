@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import UpdateForm from './UpdateForm'
 import TaskForm from './TaskForm'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -15,7 +14,8 @@ class TaskCreate extends Component {
         category: '',
         title: '',
         text: '',
-        date: ''
+        date: '',
+        checkBox: false
       },
       createdId: null,
       updated: false
@@ -52,7 +52,6 @@ class TaskCreate extends Component {
         variant: 'success'
       }))
       .catch(error => {
-        console.log(error)
         msgAlert({
           heading: 'Created Tasks Failed ' + error.message,
           message: messages.createTaskFailure,

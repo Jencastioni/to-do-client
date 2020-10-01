@@ -54,6 +54,15 @@ class Tasks extends Component {
       })
   }
 
+  handleCheck = event => {
+    event.persist()
+    this.setState(prevState => {
+      const updatedField = { checkBox: !prevState.task.checkBox }
+      const editedTask = Object.assign({}, prevState.task, updatedField)
+      return { task: editedTask }
+    })
+  }
+
   destroyTask = (taskId) => {
     const { msgAlert } = this.props
     axios({
@@ -105,6 +114,7 @@ class Tasks extends Component {
                 {task.title}
               </Link><br/>
               Due Date: {fullDate}
+              <p><input name="checkBox" type="checkbox" className="checkbox" defaultChecked={task.checkBox} /></p>
             </Card.Body>
           </Card>
         </div>
@@ -119,7 +129,7 @@ class Tasks extends Component {
             <Card.Body className="cardbody">
               <Card.Title className="card-title">Tasks</Card.Title><br/>
               <Card.Text>
-                Tasks are sorted by Highest Priority, Important, Low Priority to Not Important.<br/>
+                Tasks are sorted by 1-Important and Urgent, 2-Important and Not Urgent, 3-Urgent and Not Important, 4-Not Urgent and Not Important and Completed.<br/>
                 They are then sorted by Date (oldest to newest) within each category.<br/>
                 Completed tasks will be sent to the top so do not forget to delete them!
               </Card.Text><br/>

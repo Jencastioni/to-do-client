@@ -14,7 +14,8 @@ class TaskUpdate extends Component {
         category: '',
         title: '',
         text: '',
-        date: ''
+        date: '',
+        checkBox: false
       },
       updated: false
     }
@@ -35,9 +36,7 @@ class TaskUpdate extends Component {
 
     this.setState(prevState => {
       const updatedField = { [event.target.name]: event.target.value }
-
       const editedTask = Object.assign({}, prevState.task, updatedField)
-
       return { task: editedTask }
     })
   }

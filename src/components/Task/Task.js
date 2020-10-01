@@ -45,6 +45,38 @@ class Task extends Component {
     this.setState({ redirected: true })
   }
 
+  handleCheck = event => {
+    event.persist()
+    this.setState(prevState => {
+      const updatedField = { checkBox: !prevState.task.checkBox }
+      const editedTask = Object.assign({}, prevState.task, updatedField)
+      console.log(editedTask)
+      if (this.state.task.checkBox) {
+        axios({
+          url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+          method: 'PATCH',
+          headers: {
+            'Authorization': `Bearer ${this.props.user.token}`
+          },
+          data: { category: this.state.task.category.options[4] }
+        })
+          .then(() => this.setState({ options: 'Completed' }))
+          .catch(console.error)
+      }
+      return { task: editedTask }
+    })
+    // if (this.state.task.checkBox) {
+    //   axios({
+    //     url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+    //     method: 'PATCH',
+    //     headers: {
+    //       'Authorization': `Bearer ${this.props.user.token}`
+    //     },
+    //     data: { category: this.state.task.category.options[4] }
+    //   })
+    // }
+  }
+
   destroyTask = () => {
     const { msgAlert } = this.props
     axios({
@@ -70,7 +102,7 @@ class Task extends Component {
   }
 
   render () {
-    const { task, deleted, redirected } = this.state
+    const { task, deleted, redirected, checkBox } = this.state
 
     if (!task) {
       return <p>Loading...</p>
@@ -81,6 +113,10 @@ class Task extends Component {
         pathname: '/tasks',
         state: { msgAlert: 'Deleted task successfully' }
       }} />
+    }
+
+    if (checkBox) {
+      return <Redirect to={{ pathname: `/tasks/${this.props.match.params.id}/update` }} />
     }
 
     if (redirected) {
@@ -100,6 +136,7 @@ class Task extends Component {
         <p>{task.text}</p>
         <p>Due Date: {fullDate}</p>
         <button type="button" className="btn btn-primary" onClick={this.handleClick}> Edit </button>
+        <p><input name="checkBox" type="checkbox" label="checkbox" onClick={this.handleCheck} className="checkbox" defaultChecked={task.checkBox} /></p>
         <p></p><br/>
         <Link className="back" to='/tasks'>Back to all tasks <img src="clipboard.png" height="40"></img></Link>
       </div>

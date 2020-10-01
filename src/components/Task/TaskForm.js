@@ -15,7 +15,7 @@ const TaskForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
           <option>2-Important and Not Urgent</option>
           <option>3-Urgent and Not Important</option>
           <option>4-Not Urgent and Not Important</option>
-          <option>0-Completed</option>
+          <option>Completed</option>
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">

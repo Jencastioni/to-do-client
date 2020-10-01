@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 
-const UpdateForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
+const UpdateForm = ({ task, handleSubmit, handleChange, handleCheck, cancelPath }) => (
 
   <div className="updates">
     <Form className="updateForm" onSubmit={handleSubmit}>
@@ -15,7 +15,7 @@ const UpdateForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
           <option>2-Important and Not Urgent</option>
           <option>3-Urgent and Not Important</option>
           <option>4-Not Urgent and Not Important</option>
-          <option>0-Completed</option>
+          <option>Completed</option>
         </Form.Control>
       </Form.Group>
       <Form.Group controlId="exampleForm.ControlSelect2">
@@ -29,6 +29,9 @@ const UpdateForm = ({ task, handleSubmit, handleChange, cancelPath }) => (
       <Form.Group controlId="exampleForm.ControlSelect4">
         <Form.Label>Due Date</Form.Label>
         <Form.Control type="date" placeholder="Date" value={task.date} name='date' onChange={handleChange}/>
+      </Form.Group>
+      <Form.Group controlId="formGridCheckbox">
+        <Form.Check name="checkBox" type="checkbox" label="Completed" defaultChecked={task.checkBox} onChange={handleCheck} />
       </Form.Group>
       <button type='submit' className="btn btn-primary">Submit</button>
       <Link to={cancelPath}>
