@@ -50,32 +50,69 @@ class Task extends Component {
     this.setState(prevState => {
       const updatedField = { checkBox: !prevState.task.checkBox }
       const editedTask = Object.assign({}, prevState.task, updatedField)
-      console.log(editedTask)
-      if (this.state.task.checkBox) {
-        axios({
-          url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
-          method: 'PATCH',
-          headers: {
-            'Authorization': `Bearer ${this.props.user.token}`
-          },
-          data: { category: this.state.task.category.options[4] }
-        })
-          .then(() => this.setState({ options: 'Completed' }))
-          .catch(console.error)
-      }
+      console.log(this.setState)
       return { task: editedTask }
     })
-    // if (this.state.task.checkBox) {
-    //   axios({
-    //     url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
-    //     method: 'PATCH',
-    //     headers: {
-    //       'Authorization': `Bearer ${this.props.user.token}`
-    //     },
-    //     data: { category: this.state.task.category.options[4] }
-    //   })
-    // }
   }
+
+  componentDidUpdate () {
+    axios({
+      url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${this.props.user.token}`
+      },
+      data: { category: this.state.task.category.options[4] }
+    })
+  }
+
+  // TRIAL:S
+  // handleCheck = prevState => {
+  //   event.persist()
+  //   this.setState(prevState)
+  // }
+  // componentDidUpdate = prevState => {
+  //   if (prevState !== this.state) {
+  //     this.setState(prevState => {
+  //       const updatedField = { checkBox: !prevState.task.checkBox }
+  //       const editedTask = Object.assign({}, prevState.task, updatedField)
+  //       console.log(this.setState)
+  //       return { task: editedTask }
+  //     })
+  //   }
+  // }
+
+  // handleCheck = event => {
+  //   event.persist()
+  //   this.setState(prevState => {
+  //     const updatedField = { checkBox: !prevState.task.checkBox }
+  //     const editedTask = Object.assign({}, prevState.task, updatedField)
+  //     console.log(editedTask)
+  //     if (this.state.task.checkBox) {
+  //       axios({
+  //         url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+  //         method: 'PATCH',
+  //         headers: {
+  //           'Authorization': `Bearer ${this.props.user.token}`
+  //         },
+  //         data: { category: this.state.task.category.options[4] }
+  //       })
+  //         .then(() => this.setState({ options: 'Completed' }))
+  //         .catch(console.error)
+  //     }
+  //     return { task: editedTask }
+  //   })
+  // if (this.state.task.checkBox) {
+  //   axios({
+  //     url: `${apiUrl}/tasks/${this.props.match.params.id}/update`,
+  //     method: 'PATCH',
+  //     headers: {
+  //       'Authorization': `Bearer ${this.props.user.token}`
+  //     },
+  //     data: { category: this.state.task.category.options[4] }
+  //   })
+  // }
+  // }
 
   destroyTask = () => {
     const { msgAlert } = this.props
